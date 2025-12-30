@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Ummay Arbab Khan</title>
+  <style>
+    :root{
+      --bg1:#fff3f7;
+      --bg2:#f3f7ff;
+      --card:#ffffffcc;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --accent:#e11d48;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(800px 500px at 20% 20%, var(--bg2), transparent 60%),
+                  radial-gradient(800px 500px at 80% 10%, var(--bg1), transparent 60%),
+                  linear-gradient(180deg, #ffffff, #f8fafc);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .wrap{
+      width:min(900px, 100%);
+      display:grid;
+      gap:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+      backdrop-filter: blur(8px);
+    }
+
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(225,29,72,.18);
+      background: rgba(225,29,72,.06);
+      color: var(--accent);
+      font-weight:600;
+      font-size:13px;
+    }
+
+    h1{
+      margin:10px 0 8px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.05;
+      letter-spacing:-0.02em;
+    }
+
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width:60ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .mini{
+      border-radius:16px;
+      border:1px solid rgba(0,0,0,.06);
+      padding:16px;
+      background:#fff;
+    }
+
+    .mini h3{
+      margin:0 0 8px;
+      font-size:14px;
+      color:var(--muted);
+      font-weight:700;
+      letter-spacing:.02em;
+      text-transform: uppercase;
+    }
+
+    .mini p{
+      margin:0;
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .quote{
+      margin-top:16px;
+      padding:18px;
+      border-radius:16px;
+      border:1px dashed rgba(225,29,72,.28);
+      background: rgba(225,29,72,.04);
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .quote strong{ color:var(--accent); }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    button{
+      border:1px solid rgba(0,0,0,.10);
+      background:#fff;
+      color:var(--text);
+      padding:12px 14px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow: 0 6px 16px rgba(0,0,0,.06);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    button:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    }
+
+    .primary{
+      background: var(--accent);
+      color:#fff;
+      border-color: rgba(225,29,72,.35);
+    }
+
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      padding:10px 0 2px;
+    }
+
+    .heart{
+      display:inline-block;
+      animation: float 2.2s ease-in-out infinite;
+      transform-origin:center;
+    }
+
+    @keyframes float{
+      0%,100%{ transform: translateY(0) scale(1); }
+      50%{ transform: translateY(-6px) scale(1.05); }
+    }
+
+    @media (max-width: 820px){
+      .grid{ grid-template-columns: 1fr; }
+      .sub{ max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="top">
+        <div>
+          <span class="badge"><span class="heart">❤️</span> A small page just for you</span>
+          <h1>Ummay Arbab Khan</h1>
+          <p class="sub">
+            I made this little page to say something simple:
+            you matter to me, and I’m grateful you’re in my life.
+          </p>
+        </div>
+        <div class="badge" id="today"></div>
+      </div>
+
+      <div class="grid">
+        <div class="mini">
+          <h3>What I admire</h3>
+          <p>Your kindness, your strength, and the way you make things feel calm.</p>
+        </div>
+        <div class="mini">
+          <h3>My promise</h3>
+          <p>I’ll always try to respect you, support you, and keep you smiling.</p>
+        </div>
+        <div class="mini">
+          <h3>My favorite thought</h3>
+          <p>That life is better when I get to share it with you.</p>
+        </div>
+      </div>
+
+      <div class="quote" id="message">
+        <strong>Ummay,</strong> if you’re reading this, I just want you to know:
+        I care about you a lot. Not in a loud way. In a steady, real way.
+      </div>
+
+      <div class="actions">
+        <button class="primary" onclick="showLoveNote()">Open a sweet note</button>
+        <button onclick="showCompliment()">Another reason I like you</button>
+        <button onclick="copyText()">Copy message</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      Made with HTML + CSS + a little love 🙂
+    </div>
+  </div>
+
+  <script>
+    // Show today's date (nice touch)
+    const d = new Date();
+    const opts = { weekday: "short", year: "numeric", month: "short", day: "numeric" };
+    document.getElementById("today").textContent = d.toLocaleDateString(undefined, opts);
+
+    const notes = [
+      "I appreciate you more than I say. You make life feel lighter.",
+      "You’re genuinely special. I notice the small things you do, and they matter.",
+      "Being with you feels like home. Safe, warm, and real.",
+      "If I could pick one person to share my good days with, it would be you.",
+      "I’m proud of you. Always. Even on the days you doubt yourself."
+    ];
+
+    const compliments = [
+      "Your smile can change the mood of a whole room.",
+      "You have a strong heart, and it shows.",
+      "You’re thoughtful in a way that people don’t forget.",
+      "You bring peace. That’s rare.",
+      "You make ordinary moments feel important."
+    ];
+
+    function randomItem(arr){
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function showLoveNote(){
+      document.getElementById("message").innerHTML =
+        "<strong>Ummay,</strong> " + randomItem(notes);
+    }
+
+    function showCompliment(){
+      document.getElementById("message").innerHTML =
+        "<strong>Ummay,</strong> " + randomItem(compliments);
+    }
+
+    async function copyText(){
+      const text = document.getElementById("message").innerText;
+      try{
+        await navigator.clipboard.writeText(text);
+        alert("Copied ❤️");
+      }catch(e){
+        alert("Copy not supported in this browser.");
+      }
+    }
+  </script>
+</body>
+</html>
